@@ -44,8 +44,19 @@
 	function fetchBookmarks(){
 		//get from local storage
 		var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-	console.log(bookmarks);
 
+		// Get output
+		var bookmarksResults = document.getElementById('bookmarksResults');
+		bookmarksResults.innerHTML = '';
+		for(var i = 0; i < bookmarks.length; i ++){
+			var name = bookmarks[i].name;
+			var url = bookmarks[i].url;
+
+			bookmarksResults.innerHTML += '<div class="well">' +
+													'<h3>'+name+
+													'</h3>'+
+													'</div>';
+		}
 	}
 
 
